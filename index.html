@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografis: Tunanevice - Solusi Inovatif untuk Tunanetra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #1A202C;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .stat-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        .flow-step {
+            border: 2px solid #42A5F5;
+            background-color: #ffffff;
+            color: #1A202C;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            flex-grow: 1;
+            margin: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .flow-arrow {
+            font-size: 2.5rem;
+            color: #1976D2;
+            align-self: center;
+            margin: 0 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black text-[#0D47A1] mb-3">TUNANEVICE</h1>
+            <p class="text-lg md:text-xl text-[#1976D2] font-semibold">Membuka Dunia Baru bagi Tunanetra dengan AI dan Energi Terbarukan</p>
+        </header>
+
+        <main class="space-y-20">
+
+            <section id="problem">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#0D47A1]">Tantangan Penglihatan Global & Keterbatasan Alat Bantu</h2>
+                <p class="max-w-4xl mx-auto text-center text-lg leading-relaxed mb-10">
+                    Menurut WHO, lebih dari 2,2 miliar orang hidup dengan gangguan penglihatan. Dari jumlah tersebut, 1 miliar kasus dapat dicegah atau belum ditangani. Alat bantu konvensional seringkali tidak memadai untuk menjamin keselamatan dan kemandirian mereka.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="stat-card">
+                        <p class="text-7xl md:text-8xl font-black text-[#0D47A1]">2,2 Miliar</p>
+                        <p class="text-xl font-semibold text-[#1976D2] mt-2">Orang dengan Gangguan Penglihatan di Seluruh Dunia</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="text-xl font-semibold mb-4 text-[#1976D2]">Penyebab Utama Gangguan Penglihatan (dari 1 Miliar Kasus Belum Tertangani)</h3>
+                        <div class="chart-container h-64 md:h-72">
+                            <canvas id="causesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="opportunity">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#0D47A1]">Peluang di Balik Visi Indonesia Emas 2045</h2>
+                <p class="max-w-4xl mx-auto text-center text-lg leading-relaxed mb-10">
+                    Tunanevice lahir dari persimpangan dua prioritas nasional: penguasaan teknologi untuk pembangunan manusia dan transisi ke energi terbarukan. Inovasi ini menjawab kebutuhan sosial sekaligus mendukung target strategis bangsa.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div class="stat-card">
+                        <h3 class="text-xl font-semibold mb-4 text-[#1976D2]">Target Bauran Energi Terbarukan 2025</h3>
+                        <div class="chart-container h-64 md:h-72">
+                            <canvas id="energyChart"></canvas>
+                        </div>
+                         <p class="mt-4 text-sm text-gray-600">Realisasi kapasitas PLTS yang masih rendah menyoroti kebutuhan mendesak akan inovasi teknologi pendukung.</p>
+                    </div>
+                    <div class="stat-card flex flex-col justify-center">
+                        <span class="text-7xl">🇮🇩</span>
+                        <h3 class="text-xl font-semibold mt-4 text-[#1976D2]">Pilar 1: Indonesia Emas 2045</h3>
+                        <p class="text-lg font-bold text-[#0D47A1] mt-2">Pembangunan Manusia & Penguasaan IPTEK</p>
+                        <p class="mt-2 text-sm text-gray-600">Pemerintah & industri proaktif mendukung pengembangan talenta dan solusi berbasis AI.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="solution">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#0D47A1]">Memperkenalkan Tunanevice: Ekosistem Aksesibilitas Cerdas</h2>
+                 <div class="bg-white rounded-lg shadow-xl p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="text-center md:text-left">
+                            <p class="text-lg leading-relaxed mb-6">
+                                Tunanevice adalah kacamata pintar yang mengintegrasikan AI, IoT, dan energi hibrida untuk memberikan kemandirian, keselamatan, dan konektivitas bagi penyandang tunanetra.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded-lg"><p class="font-bold text-[#1976D2]">🧠 Asisten AI</p></div>
+                                <div class="bg-blue-50 p-3 rounded-lg"><p class="font-bold text-[#1976D2]">👁️ Deteksi Objek</p></div>
+                                <div class="bg-blue-50 p-3 rounded-lg"><p class="font-bold text-[#1976D2]">📞 Panggilan Suara</p></div>
+                                <div class="bg-blue-50 p-3 rounded-lg"><p class="font-bold text-[#1976D2]">☀️ Energi Hibrida</p></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <div class="w-64 h-64 bg-gray-200 rounded-full flex items-center justify-center">
+                                <span class="text-8xl">👓</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="workflow">
+                <h2 class="text-3xl font-bold text-center mb-10 text-[#0D47A1]">Alur Kerja Intuitif untuk Pengguna</h2>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex flex-col md:flex-row justify-center items-stretch">
+                        <div class="flow-step">
+                            <span class="text-5xl mb-2">🔋</span>
+                            <p class="font-bold">1. Pengisian Daya</p>
+                            <p class="text-sm">Cukup letakkan di casing magnetik (USB-C) atau biarkan panel surya bekerja.</p>
+                        </div>
+                        <div class="flow-arrow hidden md:flex">→</div>
+                        <div class="flow-arrow md:hidden text-center my-2">↓</div>
+                        <div class="flow-step">
+                            <span class="text-5xl mb-2">🔗</span>
+                            <p class="font-bold">2. Aktivasi Mudah</p>
+                            <p class="text-sm">Buka casing, perangkat otomatis terhubung via Bluetooth 5.4 dan memberi notifikasi status.</p>
+                        </div>
+                        <div class="flow-arrow hidden md:flex">→</div>
+                        <div class="flow-arrow md:hidden text-center my-2">↓</div>
+                        <div class="flow-step">
+                            <span class="text-5xl mb-2">🚶‍♂️</span>
+                            <p class="font-bold">3. Navigasi Aman</p>
+                            <p class="text-sm">Sensor & AI mendeteksi rintangan, memberikan peringatan suara secara real-time.</p>
+                        </div>
+                        <div class="flow-arrow hidden md:flex">→</div>
+                        <div class="flow-arrow md:hidden text-center my-2">↓</div>
+                        <div class="flow-step">
+                            <span class="text-5xl mb-2">💬</span>
+                            <p class="font-bold">4. Interaksi Cerdas</p>
+                            <p class="text-sm">Akses Gemini AI atau telepon teman dengan kontrol sentuh yang mudah.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-20 py-8 border-t border-gray-300">
+            <p class="text-gray-600">Tunanevice: Sebuah langkah menuju masa depan yang lebih inklusif, didukung oleh teknologi terdepan.</p>
+        </footer>
+    </div>
+
+    <script>
+        const brilliantBlues = {
+            background: 'rgba(66, 165, 245, 0.2)',
+            border: '#0D47A1',
+            accent1: '#1976D2',
+            accent2: '#42A5F5',
+            accent3: '#90CAF9',
+            text: '#1A202C'
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const defaultChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        color: brilliantBlues.text,
+                        font: {
+                            family: "'Inter', sans-serif"
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('causesChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Katarak', 'Kesalahan Bias', 'Degenerasi Makula', 'Glaukoma', 'Lainnya'],
+                datasets: [{
+                    label: 'Jumlah Kasus (Juta)',
+                    data: [94, 88.4, 8, 7.7, 1000 - (94+88.4+8+7.7)],
+                    backgroundColor: [
+                        brilliantBlues.border,
+                        brilliantBlues.accent1,
+                        brilliantBlues.accent2,
+                        brilliantBlues.accent3,
+                        '#CFD8DC'
+                    ],
+                    borderColor: '#f0f4f8',
+                    borderWidth: 2,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                plugins: {
+                    ...defaultChartOptions.plugins,
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            color: brilliantBlues.text,
+                            font: {
+                                family: "'Inter', sans-serif"
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('energyChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Realisasi PLTS 2023', 'Target Bauran EBT 2025'],
+                datasets: [{
+                    label: 'Persentase (%)',
+                    data: [12.5, 23],
+                    backgroundColor: [brilliantBlues.accent2, brilliantBlues.border],
+                    borderColor: [brilliantBlues.accent1, brilliantBlues.border],
+                    borderWidth: 1,
+                    barThickness: 50
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 25,
+                        ticks: {
+                            color: brilliantBlues.text,
+                            callback: function(value) {
+                                return value + '%'
+                            }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: brilliantBlues.text
+                        }
+                    }
+                },
+                plugins: {
+                    ...defaultChartOptions.plugins,
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
